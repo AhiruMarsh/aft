@@ -2,7 +2,7 @@
 ## Requirements
 
 | Name | Version |
-| ---- | ------- |
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.15.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.44.0 |
 
@@ -13,7 +13,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-| ---- | ------ | ------- |
+|------|--------|---------|
 | <a name="module_aft"></a> [aft](#module\_aft) | aws-ia/control_tower_account_factory/aws | 1.20.0 |
 
 ## Resources
@@ -23,7 +23,7 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
+|------|-------------|------|---------|:--------:|
 | <a name="input_aft_management_account_id"></a> [aft\_management\_account\_id](#input\_aft\_management\_account\_id) | AWS account ID (AFT management) | `string` | n/a | yes |
 | <a name="input_audit_account_id"></a> [audit\_account\_id](#input\_audit\_account\_id) | AWS account ID (Audit) | `string` | n/a | yes |
 | <a name="input_aws_region_name"></a> [aws\_region\_name](#input\_aws\_region\_name) | AWS region name | `string` | `"ap-northeast-1"` | no |
