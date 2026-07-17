@@ -14,7 +14,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aft"></a> [aft](#module\_aft) | aws-ia/control_tower_account_factory/aws | 1.20.1 |
+| <a name="module_aft"></a> [aft](#module\_aft) | aws-ia/control_tower_account_factory/aws | 1.21.1 |
 
 ## Resources
 
