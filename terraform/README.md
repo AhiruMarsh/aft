@@ -14,7 +14,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aft"></a> [aft](#module\_aft) | aws-ia/control_tower_account_factory/aws | 1.21.1 |
+| <a name="module_aft"></a> [aft](#module\_aft) | git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory | 10fe99952ae76fd33eb0a2808cc2ce11f6b45d17 |
 
 ## Resources
 
