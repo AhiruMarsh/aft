@@ -1,26 +1,16 @@
 name: Generate terraform docs
 
 on:
-  - pull_request
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  pull_request:
+    paths:
+      - ".github/workflows/**.yml"
+      - ".github/workflows/**.yaml"
+      - "**.tf*"
 
 jobs:
   docs:
-    runs-on: ubuntu-latest
+    uses: AhiruMarsh/actions/.github/workflows/generate-terraform-docs.yaml@main
+    with:
+      working-dir: terraform/
     permissions:
       contents: write
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-
-      - name: Render terraform docs inside the README.md and push changes back to PR branch
-        uses: terraform-docs/gh-actions@v1.4.1
-        with:
-          working-dir: terraform/
-          output-file: README.md
-          output-method: inject
-          git-push: "true"
