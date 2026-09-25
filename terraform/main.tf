@@ -1,7 +1,7 @@
 # https://github.com/aws-ia/terraform-aws-control_tower_account_factory/blob/main/README.md
 module "aft" {
   # This module is customized from aws-ia/control_tower_account_factory/aws
-  source  = "git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory?ref=10fe99952ae76fd33eb0a2808cc2ce11f6b45d17" # v1.21.1
+  source  = "git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory?ref=4315adedd857d47679584a455abeeae93e40d200" # v1.22.0
 
   ct_management_account_id  = var.ct_management_account_id
   log_archive_account_id    = var.log_archive_account_id
