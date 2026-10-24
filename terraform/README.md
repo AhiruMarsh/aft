@@ -14,7 +14,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aft"></a> [aft](#module\_aft) | git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory | 4315adedd857d47679584a455abeeae93e40d200 |
+| <a name="module_aft"></a> [aft](#module\_aft) | git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory | ca56c612fff90206019ccc3a6e1d17146fc1e9f2 |
 
 ## Resources
 
