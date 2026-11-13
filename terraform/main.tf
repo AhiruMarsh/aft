@@ -1,7 +1,7 @@
 # https://github.com/aws-ia/terraform-aws-control_tower_account_factory/blob/main/README.md
 module "aft" {
   # This module is customized from aws-ia/control_tower_account_factory/aws
-  source  = "git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory?ref=ca56c612fff90206019ccc3a6e1d17146fc1e9f2" # v1.23.0
+  source  = "git::https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory?ref=5f350c649f31aeb43dca7798d27ab7d070e6e7f7" # v1.24.0
 
   ct_management_account_id  = var.ct_management_account_id
   log_archive_account_id    = var.log_archive_account_id
@@ -23,6 +23,10 @@ module "aft" {
   aft_feature_cloudtrail_data_events      = false
   aft_feature_enterprise_support          = false
   aft_vpc_endpoints                       = false
+
+  # Account Vending Method
+  account_vending_method                                 = "organizations"
+  aft_feature_delete_vended_account_default_vpcs_enabled = true
 
   # Terraform Flags
   terraform_oidc_integration = true
