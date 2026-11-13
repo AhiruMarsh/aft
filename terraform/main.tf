@@ -24,6 +24,10 @@ module "aft" {
   aft_feature_enterprise_support          = false
   aft_vpc_endpoints                       = false
 
+  # Account Vending Method
+  account_vending_method                                 = "organizations"
+  aft_feature_delete_vended_account_default_vpcs_enabled = true
+
   # Terraform Flags
   terraform_oidc_integration = true
   terraform_token            = var.tfc_terraform_token
