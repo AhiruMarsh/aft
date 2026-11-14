@@ -6,18 +6,11 @@ AWS Control Tower Account Factory for Terraform (AFT) を用いて、AWSアカ�
   - [terraform/README.md](terraform/README.md) : `terraform-docs` によって自動生成されたモジュールのドキュメント  
   `.github/workflows/documentation.yml` によりPR時に自動更新されます。
 
-## カスタマイズしたAFTモジュールについて
-本リポジトリでは、[aws-ia/terraform-aws-control_tower_account_factory](https://github.com/aws-ia/terraform-aws-control_tower_account_factory) をベースにカスタマイズした以下のフォークモジュールを利用しています。  
-モジュールをバージョンアップする際は、`main.tf` の `ref` を更新してください。
+## AFTモジュールについて
+公式の [aws-ia/control_tower_account_factory/aws](https://registry.terraform.io/modules/aws-ia/control_tower_account_factory/aws) モジュールを Terraform Registry 経由で利用しています。  
+モジュールをバージョンアップする際は、`main.tf` の `version` を更新してください(Dependabot が自動で PR を作成します)。
 
-- リポジトリ: https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory
-- 参照コミット: [`5f350c649f31aeb43dca7798d27ab7d070e6e7f7`](https://github.com/AhiruMarsh/terraform-aws-control_tower_account_factory/commit/5f350c649f31aeb43dca7798d27ab7d070e6e7f7)
 - 利用箇所: [terraform/main.tf](terraform/main.tf) の `module "aft"` ブロック
-
-### カスタマイズ内容
-| ファイル | 変更内容 |
-|---|---|
-| `modules/aft-account-request-framework/eventbridge.tf` | アカウントリクエストプロセッサ（`aws_cloudwatch_event_rule.aft_account_request_processor`）のスケジュール実行間隔を、本家の5分ごと（`rate(5 minutes)`）から1時間ごと（`rate(1 hour)`）に変更 |
 
 ## アカウント発行方式
 `terraform/main.tf` で `account_vending_method = "organizations"` を指定しており、アカウントは Service Catalog (Control Tower Account Factory) ではなく AWS Organizations の `CreateAccount` で作成し、Control Tower の自動登録 (auto-enrollment) でエンロールします。
